@@ -40,7 +40,8 @@
   "provisioners": [
     {
       "ansible_env_vars": [
-        "ANSIBLE_SSH_ARGS='-o IdentitiesOnly=yes'"
+        "ANSIBLE_SSH_ARGS='-o IdentitiesOnly=yes'",
+        "SSH_USERNAME={{user `SshUsername`}}"
       ],
       "extra_arguments": [
         "-v"
@@ -53,12 +54,12 @@
     "AmiGroups": "all",
     "Department": "Platform",
     "ImageName": "{{env `ImageName`}}",
-    "InstanceType": "t3.nano",
-    "OwnerEmail": "it@sagebase.org",
+    "InstanceType": "t3.micro",
+    "OwnerEmail": "tess.thyer@sagebase.org",
     "Project": "Infrastructure",
     "SnapshotGroups": "all",
-    "SourceImage": "ami-09ddd854571a732be",
+    "SourceImage": "ami-0b7906ab614596e7e",
     "SshUsername": "ubuntu",
-    "VolumeSize": "8"
+    "VolumeSize": "16"
   }
 }
